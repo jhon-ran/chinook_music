@@ -47,12 +47,14 @@ Things you may want to cover:
 1. Combien y a t'il d'albums dont le titre contient "Great" ?
 - my_album = Album.where("title like ?", "%Great%")
 - my_album.count R = 13 
-- Supprime tous les albums dont le nom contient "music".
 
-2. Combien y a t'il d'albums écrits par AC/DC ?
+2. Supprime tous les albums dont le nom contient "music".
+- Album.where("title like ?", "%music%").destroy_all
+
+3. Combien y a t'il d'albums écrits par AC/DC ?
 - my_album = Album.where(artist: 'AC/DC')
 - my_album.count    R = 2
 
-3. Combien de chanson durent exactement 158589 millisecondes ?
+4. Combien de chanson durent exactement 158589 millisecondes ?
 - my_song = Track.where(duration: '158589')
 - R = 0
